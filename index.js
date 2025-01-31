@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000; // Usar un puerto dinámico o 3000 como p
 // Middleware
 app.use(
   express.json(),
-  corscors({
+  cors({
     origin:
       "https://storepc-frontend-n75y1pvsh-alfarofernandos-projects.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
