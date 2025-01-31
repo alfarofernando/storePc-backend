@@ -12,8 +12,16 @@ const app = express();
 const PORT = process.env.PORT || 3000; // Usar un puerto dinámico o 3000 como predeterminado
 
 // Middleware
-app.use(express.json(), cors());
-
+app.use(
+  express.json(),
+  corscors({
+    origin:
+      "https://storepc-frontend-n75y1pvsh-alfarofernandos-projects.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+app.use();
 // Conexión a MongoDB Atlas
 mongoose
   .connect(process.env.MONGO_URI, {
